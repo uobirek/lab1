@@ -8,6 +8,9 @@ public class Simulation {
         return worldMap;
     }
      public static void simulateDay(){
+
         worldMap.run();
+        worldMap.eat();
     }
+
 }

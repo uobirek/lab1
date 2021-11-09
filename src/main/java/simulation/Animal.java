@@ -6,6 +6,11 @@ public class Animal {
     public Animal(Vector2D position) {
         this.position = position;
     }
+
+    public Vector2D getPosition() {
+        return position;
+    }
+
     public void move (MapDirection direction, int height, int width){
 
         position = position.add(direction.getUnitVector());
