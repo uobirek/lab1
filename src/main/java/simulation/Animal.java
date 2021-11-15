@@ -15,6 +15,7 @@ public class Animal {
 
         position = position.add(direction.getUnitVector());
         position = PBC(position);
+        position = PBC(position);
         System.out.println("Animal moves " + direction + "; new position " + position.toString());
     }
     private Vector2D PBC (Vector2D position){
