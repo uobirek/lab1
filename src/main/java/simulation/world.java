@@ -12,18 +12,13 @@ public class world {
 
     public static void main(String[] args) {
         for (int i=0; i<DAYS_NUMBER; i++){
-            System.out.println("Start");
+
             Simulation.simulateDay();
-            System.out.println("Stop");
+
         }
 
     }
 
-    private static void run() {
-   //     for (int i = 0; i < 10; i++) {
-    //        animal.move(MapDirection.values()[random.nextInt(MapDirection.values().length)]);
-//
-   //     }
-    }
+
 
 }
