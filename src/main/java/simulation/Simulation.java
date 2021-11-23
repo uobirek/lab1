@@ -11,6 +11,8 @@ public class Simulation {
 
         worldMap.run();
         worldMap.eat();
+        worldMap.reproduce();
+        worldMap.atTheEndOfDay();
     }
 
 }
