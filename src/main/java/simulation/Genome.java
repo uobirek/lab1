@@ -24,4 +24,7 @@ public class Genome {
         IntStream.range(0, GENOME_LENGTH)
                 .forEach(i -> genome.add((i <= split ? mother : father).genome.get(i)));
     }
+    public MapDirection getRandomMove(){
+        return genome.get(random.nextInt(GENOME_LENGTH));
+    }
 }
