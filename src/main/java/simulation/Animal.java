@@ -1,7 +1,6 @@
 package simulation;
 
 import java.util.Random;
-import java.util.Vector;
 
 public class Animal
     implements Comparable <Animal> {
@@ -12,6 +11,10 @@ public class Animal
     private static int counter=0;
     private final Genome genome;
     private int numberOfChildren=0;
+
+    public int getNumberOfChildren() {
+        return numberOfChildren;
+    }
 
     public Genome getGenome() {
         return genome;
@@ -66,7 +69,7 @@ public class Animal
         return position;
     }
 
-    public void move (MapDirection direction, int height, int width){
+    public void move (MapDirection direction){
 
         position = position.add(direction.getUnitVector());
         position = PBC(position);
@@ -74,13 +77,19 @@ public class Animal
         System.out.println("Animal " + animalID + " moves " + direction + "; new position " + position.toString()
                 + "; energy: "+ energy + "; age "  + age);
     }
+
+    public void moveBasedOnGenome(){
+        move(genome.getRandomMove());
+    }
+
+
     private Vector2D PBC (Vector2D position){
         int width = Simulation.getWorldMap().getWidth();
         int height = Simulation.getWorldMap().getHeight();
-        if (position.getX()<0) return position.add (new Vector2D(width, 0));
-        if (position.getX()>=0) return position.subtract(new Vector2D(width, 0));
-        if (position.getY()<0) return position.add (new Vector2D(0, height));
-        if (position.getY()>=0) return position.subtract (new Vector2D(0, height));
+        if (position.x()<0) return position.add (new Vector2D(width, 0));
+        if (position.x()>= width) return position.subtract(new Vector2D(width, 0));
+        if (position.y()<0) return position.add (new Vector2D(0, height));
+        if (position.y()>=height) return position.subtract (new Vector2D(0, height));
         return position;
     }
 
