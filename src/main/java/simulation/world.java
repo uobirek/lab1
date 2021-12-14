@@ -1,12 +1,15 @@
 package simulation;
 
+import gui.SimulationFrame;
+
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.function.DoubleToIntFunction;
 
 public class world {
-    private static Random random = new Random();
+   /* private static Random random = new Random();
    // private static Animal animal = new Animal(new Vector2D(random.nextInt(100), random.nextInt(100)));
     private static final int DAYS_NUMBER = 6;
 
@@ -17,7 +20,12 @@ public class world {
 
         }
 
-    }
+    }*/
+
+       public static void main(String[] args) {
+           SwingUtilities.invokeLater(SimulationFrame::new);
+       }
+
 
 
 
