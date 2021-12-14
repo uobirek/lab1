@@ -15,4 +15,11 @@ public class SimulationParams {
             throw new IllegalArgumentException("There is no config field called " + k);
         });
     }
+    public static Map<String, Integer> getParamsMap() {
+        return paramsMap;
+    }
+
+    static public void setField (String fieldName, int value){
+        paramsMap.put(fieldName, value);
+    }
 }
